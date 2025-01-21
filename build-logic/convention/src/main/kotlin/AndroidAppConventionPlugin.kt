@@ -11,7 +11,6 @@ class AndroidAppConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) =
         with(target) {
             with(pluginManager) {
-                apply(libs.getPlugin("kotlinAndroid"))
                 apply(libs.getPlugin("androidApplication"))
                 apply(libs.getPlugin("composeCompiler"))
             }

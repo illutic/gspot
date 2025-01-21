@@ -10,6 +10,12 @@ kotlin {
         commonMain.dependencies {
             api(projects.core.common)
             api(compose.components.resources)
+            api(compose.runtime)
+            api(compose.foundation)
+            api(compose.material)
+            api(compose.ui)
+            api(compose.components.resources)
+            api(compose.components.uiToolingPreview)
         }
     }
 }

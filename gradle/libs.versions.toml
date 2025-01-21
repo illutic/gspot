@@ -25,6 +25,7 @@ android-coil = "2.6.0"
 android-junit4 = "4.13.2"
 android-material3 = "1.3.1"
 android-adaptive = "1.0.0"
+android-lifecycle = "2.8.7"
 
 # Kotlin
 kotlin = "2.1.0"
@@ -63,6 +64,8 @@ androidx-navigation = { group = "androidx.navigation", name = "navigation-compos
 androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "android-splashScreen" }
 androidx-material3-adaptive-navigation-suite-android = { group = "androidx.compose.material3", name = "material3-adaptive-navigation-suite", version.ref = "android-material3" }
 androidx-adaptive-android = { group = "androidx.compose.material3.adaptive", name = "adaptive-android", version.ref = "android-adaptive" }
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "android-lifecycle" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "android-lifecycle" }
 
 # Kotlin
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }

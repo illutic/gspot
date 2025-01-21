@@ -9,7 +9,6 @@ import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.compose.compiler.gradle.ComposeCompilerGradlePluginExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.utils.property
 
 internal val JAVA_VERSION = JavaVersion.VERSION_21
 internal val JVM_TARGET = JvmTarget.JVM_21
@@ -34,7 +33,8 @@ internal fun Project.configureAndroidApp(applicationExtension: ApplicationExtens
 
         buildTypes {
             debug {
-                manifestPlaceholders[APP_NAME_PLACEHOLDER] = property("g.sig.app.name").toString() + " Debug"
+                manifestPlaceholders[APP_NAME_PLACEHOLDER] =
+                    property("g.sig.app.name").toString() + " Debug"
             }
         }
 
@@ -95,7 +95,9 @@ internal fun Project.configureAndroidCompose(commonExtension: CommonExtension<*,
             "implementation"(libs.findLibrary("androidx-activity-compose").get())
             "implementation"(libs.findLibrary("androidx-navigation").get())
             "implementation"(libs.findLibrary("androidx-splashscreen").get())
-            "implementation"(libs.findLibrary("androidx-material3-adaptive-navigation-suite-android").get())
+            "implementation"(
+                libs.findLibrary("androidx-material3-adaptive-navigation-suite-android").get(),
+            )
             "implementation"(libs.findLibrary("androidx-adaptive-android").get())
             "debugImplementation"(libs.findLibrary("androidx-ui-test-manifest").get())
             "debugImplementation"(libs.findLibrary("androidx-ui-tooling").get())

@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.gsig.android.app)
+    alias(libs.plugins.gsig.kotlin.multiplatform)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.composeMultiplatform)
 }
 
 dependencies {
