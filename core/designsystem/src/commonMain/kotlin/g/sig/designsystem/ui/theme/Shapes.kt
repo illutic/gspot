@@ -15,10 +15,10 @@ data class Shapes(
 
 val AppShapes =
     Shapes(
-        extraSmall = RoundedCornerShape(AppSpacing.extraSmall),
-        small = RoundedCornerShape(AppSpacing.small),
-        medium = RoundedCornerShape(AppSpacing.medium),
-        large = RoundedCornerShape(AppSpacing.large),
-        extraLarge = RoundedCornerShape(AppSpacing.extraLarge),
+        extraSmall = RoundedCornerShape(AppDimens.extraSmall),
+        small = RoundedCornerShape(AppDimens.small),
+        medium = RoundedCornerShape(AppDimens.medium),
+        large = RoundedCornerShape(AppDimens.large),
+        extraLarge = RoundedCornerShape(AppDimens.extraLarge),
         circle = CircleShape,
     )
