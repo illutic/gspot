@@ -7,7 +7,7 @@ data object Animation {
     fun <T> getContentTransition() =
         spring<T>(
             dampingRatio = Spring.DampingRatioLowBouncy,
-            stiffness = Spring.StiffnessMedium,
+            stiffness = Spring.StiffnessLow,
         )
 
     fun <T> getScreenTransition() =

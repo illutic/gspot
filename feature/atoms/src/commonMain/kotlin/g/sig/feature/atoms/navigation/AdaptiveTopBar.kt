@@ -1,30 +1,20 @@
 package g.sig.feature.atoms.navigation
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.interaction.collectIsHoveredAsState
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import g.sig.designsystem.ui.theme.LocalWindowSize
 import g.sig.designsystem.ui.theme.Theme
 import g.sig.designsystem.ui.theme.WindowSize
-import g.sig.feature.atoms.input.SearchAtom
+import g.sig.feature.atoms.input.SearchComponent
 import gsig.core.designsystem.generated.resources.Res
 import gsig.core.designsystem.generated.resources.app_name
 import gsig.core.designsystem.generated.resources.search
@@ -39,20 +29,25 @@ fun AdaptiveTopBar(
     modifier: Modifier = Modifier,
 ) {
     val isDesktop = LocalWindowSize.current == WindowSize.Desktop
+    Column(
+        modifier.background(Theme.colors.background),
+    ) {
+        if (isDesktop) {
+            DesktopTopBar(
+                selectedRoute = selectedRoute,
+                navigationItems = navigationItems,
+                onNavigationItemClick = onNavigationItemClick,
+                onSearch = onSearch,
+                modifier = Modifier.fillMaxWidth(),
+            )
+        } else {
+            MobileTopBar(
+                onSearch = onSearch,
+                modifier = Modifier.fillMaxWidth(),
+            )
+        }
 
-    if (isDesktop) {
-        DesktopTopBar(
-            selectedRoute = selectedRoute,
-            navigationItems = navigationItems,
-            onNavigationItemClick = onNavigationItemClick,
-            onSearch = onSearch,
-            modifier = modifier,
-        )
-    } else {
-        MobileTopBar(
-            onSearch = onSearch,
-            modifier = modifier,
-        )
+        HorizontalDivider(color = Theme.colors.onBackground)
     }
 }
 
@@ -62,20 +57,24 @@ private fun MobileTopBar(
     modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = modifier.background(Theme.colors.surface),
+        modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Text(
             text = stringResource(Res.string.app_name),
             style = Theme.typography.titleMedium,
-            color = Theme.colors.onSurface,
+            color = Theme.colors.onBackground,
+            modifier = Modifier.padding(Theme.dimens.small),
         )
 
-        SearchAtom(
+        SearchComponent(
             onSearch = onSearch,
             searchHint = stringResource(Res.string.search),
-            modifier = Modifier,
+            modifier =
+                Modifier
+                    .weight(1f, false)
+                    .padding(Theme.dimens.small),
         )
     }
 }
@@ -89,14 +88,15 @@ private fun DesktopTopBar(
     modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = modifier.background(Theme.colors.surface),
+        modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Text(
             text = stringResource(Res.string.app_name),
             style = Theme.typography.titleMedium,
-            color = Theme.colors.onSurface,
+            color = Theme.colors.onBackground,
+            modifier = Modifier.padding(Theme.dimens.small),
         )
 
         Row(
@@ -108,7 +108,7 @@ private fun DesktopTopBar(
                 horizontalArrangement = Arrangement.spacedBy(Theme.dimens.small),
             ) {
                 navigationItems.forEach { navigationItem ->
-                    TopBarNavigationItem(
+                    NavigationItem(
                         navigationItem = navigationItem,
                         onNavigationItemClick = onNavigationItemClick,
                         modifier = Modifier,
@@ -116,63 +116,11 @@ private fun DesktopTopBar(
                     )
                 }
             }
-            SearchAtom(
+            SearchComponent(
                 onSearch = onSearch,
                 searchHint = stringResource(Res.string.search),
+                modifier = Modifier.padding(Theme.dimens.small),
             )
         }
-    }
-}
-
-@Composable
-private fun TopBarNavigationItem(
-    navigationItem: NavigationItem,
-    onNavigationItemClick: (NavigationItem) -> Unit,
-    modifier: Modifier = Modifier,
-    isSelected: Boolean = false,
-) {
-    val interactionSource = remember { MutableInteractionSource() }
-    val isHovered by interactionSource.collectIsHoveredAsState()
-
-    val textStyle =
-        when {
-            isSelected -> Theme.typography.titleSmall
-            isHovered -> Theme.typography.titleSmall
-            else -> Theme.typography.bodyMedium
-        }
-
-    val borderColor =
-        when {
-            isSelected -> Theme.colors.onSurface
-            isHovered -> Theme.colors.onSurfaceVariant
-            else -> Color.Unspecified
-        }
-
-    Box(
-        modifier =
-            modifier
-                .width(IntrinsicSize.Max)
-                .clickable(
-                    indication = null,
-                    interactionSource = interactionSource,
-                ) {
-                    onNavigationItemClick(navigationItem)
-                },
-        contentAlignment = Alignment.Center,
-    ) {
-        Text(
-            text = navigationItem.title,
-            color = Theme.colors.onSurface,
-            style = textStyle,
-        )
-        Spacer(modifier = Modifier.height(Theme.dimens.extraSmall))
-        HorizontalDivider(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.BottomCenter),
-            color = borderColor,
-            thickness = 2.dp,
-        )
     }
 }

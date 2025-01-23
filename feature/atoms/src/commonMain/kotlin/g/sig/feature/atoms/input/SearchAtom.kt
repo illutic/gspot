@@ -7,6 +7,7 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
@@ -40,7 +41,7 @@ private val SearchContentPadding
         )
 
 @Composable
-fun SearchAtom(
+fun SearchComponent(
     onSearch: (String) -> Unit,
     searchHint: String,
     modifier: Modifier = Modifier,
@@ -93,6 +94,7 @@ fun SearchAtom(
             )
         } else {
             AppIconButton(
+                modifier = Modifier.wrapContentSize(),
                 onClick = { isExpanded = true },
             ) {
                 Icon(
