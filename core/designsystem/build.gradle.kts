@@ -1,8 +1,6 @@
 plugins {
-    alias(libs.plugins.gsig.android.library)
     alias(libs.plugins.gsig.kotlin.multiplatform)
-    alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.gsig.compose.multiplatform)
 }
 
 kotlin {
@@ -27,5 +25,3 @@ compose.resources {
     publicResClass = true
     generateResClass = auto
 }
-
-android.namespace += ".core.designsystem"

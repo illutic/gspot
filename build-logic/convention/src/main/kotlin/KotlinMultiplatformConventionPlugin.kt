@@ -1,18 +1,20 @@
 import com.android.build.api.dsl.LibraryExtension
 import g.sig.buildlogic.TARGET_SDK
 import g.sig.buildlogic.configureAndroidLibrary
+import g.sig.buildlogic.configureKotlinMultiplatform
 import g.sig.buildlogic.getPlugin
 import g.sig.buildlogic.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.dependencies
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
-class AndroidLibraryConventionPlugin : Plugin<Project> {
+class KotlinMultiplatformConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) =
         with(target) {
             with(pluginManager) {
                 apply(libs.getPlugin("androidLibrary"))
+                apply(libs.getPlugin("kotlinMultiplatform"))
             }
 
             extensions.configure<LibraryExtension> {
@@ -34,12 +36,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 }
             }
 
-            dependencies {
-                "implementation"(libs.findLibrary("androidx-core-ktx").get())
-                "implementation"(libs.findLibrary("androidx-navigation").get())
-                "implementation"(libs.findLibrary("kotlinx-coroutines-core").get())
-                "implementation"(libs.findLibrary("kotlinx-coroutines-android").get())
-                "testImplementation"(libs.findLibrary("kotlinx-coroutines-test").get())
-            }
+            extensions.configure<KotlinMultiplatformExtension>(::configureKotlinMultiplatform)
         }
 }

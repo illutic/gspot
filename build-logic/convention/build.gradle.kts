@@ -32,35 +32,21 @@ gradlePlugin {
                 libs.plugins.gsig.kotlin.multiplatform
                     .get()
                     .pluginId
-            implementationClass = "KMPConventionPlugin"
+            implementationClass = "KotlinMultiplatformConventionPlugin"
         }
-        register("androidApp") {
+        register("app") {
             id =
-                libs.plugins.gsig.android.app
+                libs.plugins.gsig.app
                     .get()
                     .pluginId
-            implementationClass = "AndroidAppConventionPlugin"
+            implementationClass = "AppConventionPlugin"
         }
-        register("androidLibrary") {
+        register("composeMultiplatform") {
             id =
-                libs.plugins.gsig.android.library
+                libs.plugins.gsig.compose.multiplatform
                     .get()
                     .pluginId
-            implementationClass = "AndroidLibraryConventionPlugin"
-        }
-        register("androidFeature") {
-            id =
-                libs.plugins.gsig.android.feature
-                    .get()
-                    .pluginId
-            implementationClass = "AndroidFeatureConventionPlugin"
-        }
-        register("androidCompose") {
-            id =
-                libs.plugins.gsig.android.compose
-                    .get()
-                    .pluginId
-            implementationClass = "AndroidComposeConventionPlugin"
+            implementationClass = "ComposeMultipatformConventionPlugin"
         }
     }
 }

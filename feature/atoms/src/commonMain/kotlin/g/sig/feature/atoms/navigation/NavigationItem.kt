@@ -123,4 +123,4 @@ internal fun NavigationItem(
 }
 
 @Composable
-private inline fun Color.animate() = animateColorAsState(this, Theme.animation.getContentTransition())
+private fun Color.animate() = animateColorAsState(this, Theme.animation.getContentTransition())

@@ -27,7 +27,7 @@ fun AdaptiveBottomBar(
     onNavigationItemClick: (NavigationItem) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val isDesktop = LocalWindowSize.current == WindowSize.Desktop
+    val isAtLeastTablet = LocalWindowSize.current >= WindowSize.Tablet
 
     Column(
         modifier.background(Theme.colors.background),
@@ -38,7 +38,7 @@ fun AdaptiveBottomBar(
 
         Spacer(modifier = Modifier.height(Theme.dimens.small))
 
-        if (isDesktop) {
+        if (isAtLeastTablet) {
             DesktopBottomBar(
                 selectedRoute = selectedRoute,
                 navigationItems = navigationItems,

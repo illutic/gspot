@@ -107,8 +107,6 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 
 # Plugins defined in project
-gsig-android-app = { id = "gsig.android.app" }
-gsig-android-library = { id = "gsig.android.library" }
-gsig-android-compose = { id = "gsig.android.compose" }
-gsig-android-feature = { id = "gsig.android.feature" }
+gsig-app = { id = "gsig.android.app" }
 gsig-kotlin-multiplatform = { id = "gsig.kotlin.multiplatform" }
+gsig-compose-multiplatform = { id = "gsig.compose.multiplatform" }

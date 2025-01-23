@@ -28,11 +28,12 @@ fun AdaptiveTopBar(
     onSearch: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val isDesktop = LocalWindowSize.current == WindowSize.Desktop
+    val isAtLeastTablet = LocalWindowSize.current >= WindowSize.Tablet
+
     Column(
         modifier.background(Theme.colors.background),
     ) {
-        if (isDesktop) {
+        if (isAtLeastTablet) {
             DesktopTopBar(
                 selectedRoute = selectedRoute,
                 navigationItems = navigationItems,

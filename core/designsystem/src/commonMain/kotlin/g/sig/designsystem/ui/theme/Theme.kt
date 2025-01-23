@@ -58,8 +58,8 @@ fun AppTheme(
     content: @Composable () -> Unit,
 ) {
     BoxWithConstraints(modifier) {
-        val isDesktop = maxWidth >= DesktopSize.width && maxHeight >= DesktopSize.height
-        val isTablet = maxWidth >= MobileSize.width && maxHeight >= MobileSize.height
+        val isDesktop = maxWidth >= DesktopSize.width
+        val isTablet = maxWidth >= MobileSize.width
 
         val windowSize =
             when {

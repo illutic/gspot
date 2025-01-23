@@ -1,14 +1,20 @@
 plugins {
-    alias(libs.plugins.gsig.android.app)
-    alias(libs.plugins.gsig.kotlin.multiplatform)
-    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.gsig.app)
 }
 
-dependencies {
-    implementation(projects.core.network)
-    implementation(projects.core.model)
-    implementation(projects.core.common)
-    implementation(projects.core.designsystem)
-    implementation(projects.core.data)
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            implementation(projects.core.network)
+            implementation(projects.core.model)
+            implementation(projects.core.common)
+            implementation(projects.core.designsystem)
+            implementation(projects.core.data)
+            implementation(projects.feature.atoms)
+        }
+    }
 }
