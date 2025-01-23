@@ -20,6 +20,7 @@ class AppConventionPlugin : Plugin<Project> {
             val appExtension = extensions.getByType<ApplicationExtension>()
             configureIosApp(kmpExtension)
             configureWasmApp(kmpExtension)
+            configureAndroidApp(kmpExtension)
             configureAndroidApp(appExtension)
         }
 }

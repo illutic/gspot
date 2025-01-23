@@ -5,7 +5,6 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import kotlin.plus
 
 internal fun Project.configureAndroidApp(applicationExtension: ApplicationExtension) {
     applicationExtension.apply {
@@ -31,6 +30,19 @@ internal fun Project.configureAndroidApp(applicationExtension: ApplicationExtens
         }
     }
 }
+
+internal fun Project.configureAndroidApp(kmpExtension: KotlinMultiplatformExtension) =
+    kmpExtension.apply {
+        androidTarget {
+            compilations.all {
+                compileTaskProvider.configure {
+                    compilerOptions {
+                        jvmTarget.set(JVM_TARGET)
+                    }
+                }
+            }
+        }
+    }
 
 internal fun Project.configureIosApp(kmpExtension: KotlinMultiplatformExtension) =
     kmpExtension.apply {
