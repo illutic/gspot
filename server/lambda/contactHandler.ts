@@ -24,9 +24,11 @@ interface ContactPayload {
   formRenderedAt?: number;
 }
 
+const ALLOWED_ORIGIN = 'https://illutic.github.io';
+
 const CORS_HEADERS = {
   'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': '*', // Replace with your domain (e.g. 'https://your-domain.com') for extra security
+  'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
   'Access-Control-Allow-Headers': 'Content-Type',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
