@@ -1,0 +1,52 @@
+{
+  "brand": ">_ GS",
+  "nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "resume": "Resume"
+  },
+  "footer": {
+    "copyright": "© 2026 George Sigalas | Senior Android Developer",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "availability": "Open to new opportunities"
+  },
+  "home": {
+    "status": "Senior Android Developer · Portsmouth, UK",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get in touch"
+  },
+  "experience": {
+    "title": "Career Trajectory",
+    "subtitle": "5+ years building production Android applications across fintech, e-commerce, and inflight entertainment — with a focus on clean architecture, performance, and CI/CD.",
+    "filterFull": "Full Experience",
+    "filterHighlights": "Impact Highlights"
+  },
+  "projects": {
+    "title": "Projects & Open Source",
+    "subtitle": "Personal projects and open-source contributions spanning Android, KMP, and the web — built with clean architecture and modern tooling."
+  },
+  "blog": {
+    "title": "Technical Dispatch",
+    "subtitle": "Deep dives into Android architecture, system design, and performance optimization.",
+    "searchPlaceholder": "Search articles, topics, or keywords...",
+    "loadMore": "Load More Articles",
+    "tocTitle": "Table of Contents",
+    "readArticle": "Read Article",
+    "readTime": "min read"
+  },
+  "contact": {
+    "title": "Initialize Connection",
+    "subtitle": "Execute a handshake. Fill out the parameters below to get in touch.",
+    "nameLabel": "name_param",
+    "namePlaceholder": "Your Name",
+    "emailLabel": "email_address",
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "payload_body",
+    "messagePlaceholder": "Enter your message here...",
+    "submitBtn": "EXECUTE_SEND",
+    "statusAvailable": "Open to new opportunities"
+  }
+}

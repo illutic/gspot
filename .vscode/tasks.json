@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "label": "Start Vite Dev Server",
+      "detail": "Starts the local Vite frontend development server (http://localhost:5173)",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*(vite|VITE).*",
+          "endsPattern": ".*Local:.*http://localhost:\\d+.*"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "pages:dev",
+      "label": "Start Cloudflare Pages Dev Server",
+      "detail": "Emulates Cloudflare Pages and Functions locally with Wrangler (http://localhost:8788)",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*(wrangler|Wrangler).*",
+          "endsPattern": ".*Ready on http://localhost:\\d+.*"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "label": "Build Application",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "label": "Lint with Oxlint",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "typecheck",
+      "label": "Typecheck (Client & Server)",
+      "problemMatcher": ["$tsc"]
+    }
+  ]
+}

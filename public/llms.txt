@@ -1,0 +1,15 @@
+# Modular Web Template
+
+> High-performance, architecturally sound web application template built with React 19, TypeScript, Vite, and Vanilla CSS design tokens.
+
+## Architecture
+- Framework: React 19 + TypeScript
+- Bundler: Vite
+- Structure: Gradle-inspired Lightweight Modular Monolith (@core/*, @features/*, @app/*)
+- Styling: Zero-overhead Vanilla CSS Design Tokens
+- Hosting: Cloudflare Pages + Serverless Functions
+
+## Pages
+- Home: /
+- About: /about
+- Contact: /contact

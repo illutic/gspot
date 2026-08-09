@@ -1,0 +1,52 @@
+{
+  "brand": ">_ GS",
+  "nav": {
+    "experience": "Εμπειρία",
+    "projects": "Έργα",
+    "blog": "Άρθρα",
+    "contact": "Επικοινωνία",
+    "resume": "Βιογραφικό"
+  },
+  "footer": {
+    "copyright": "© 2026 George Sigalas | Senior Android Developer",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "availability": "Ανοιχτός σε νέες ευκαιρίες"
+  },
+  "home": {
+    "status": "Senior Android Developer · Portsmouth, UK",
+    "viewProjects": "Προβολή Έργων",
+    "getInTouch": "Επικοινωνία"
+  },
+  "experience": {
+    "title": "Επαγγελματική Πορεία",
+    "subtitle": "5+ χρόνια ανάπτυξης Android εφαρμογών σε fintech, e-commerce και ψυχαγωγία — με έμφαση στην καθαρή αρχιτεκτονική, απόδοση και CI/CD.",
+    "filterFull": "Πλήρης Εμπειρία",
+    "filterHighlights": "Σημαντικά Επιτεύγματα"
+  },
+  "projects": {
+    "title": "Έργα & Ανοικτός Κώδικας",
+    "subtitle": "Προσωπικά έργα και συνεισφορές ανοικτού κώδικα σε Android, KMP και web — με έμφαση στην καθαρή αρχιτεκτονική."
+  },
+  "blog": {
+    "title": "Τεχνικά Άρθρα",
+    "subtitle": "Βαθιές αναλύσεις για αρχιτεκτονική Android, σχεδιασμό συστημάτων και βελτιστοποίηση απόδοσης.",
+    "searchPlaceholder": "Αναζήτηση άρθρων, θεμάτων ή λέξεων-κλειδιών...",
+    "loadMore": "Φόρτωση Περισσότερων Άρθρων",
+    "tocTitle": "Πίνακας Περιεχομένων",
+    "readArticle": "Ανάγνωση Άρθρου",
+    "readTime": "λεπτά ανάγνωσης"
+  },
+  "contact": {
+    "title": "Έναρξη Σύνδεσης",
+    "subtitle": "Εκτέλεση χειραψίας. Συμπληρώστε τις παραμέτρους για να επικοινωνήσετε.",
+    "nameLabel": "name_param",
+    "namePlaceholder": "Γιώργος Παπαδόπουλος",
+    "emailLabel": "email_address",
+    "emailPlaceholder": "george@example.com",
+    "messageLabel": "payload_body",
+    "messagePlaceholder": "Εισαγάγετε το μήνυμά σας εδώ...",
+    "submitBtn": "ΑΠΟΣΤΟΛΗ_ΜΗΝΥΜΑΤΟΣ",
+    "statusAvailable": "Ανοιχτός σε νέες ευκαιρίες"
+  }
+}

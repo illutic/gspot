@@ -1,0 +1,30 @@
+.lang-toggle-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.lang-btn.active {
+  color: var(--color-primary);
+  background: var(--border-subtle);
+}
+
+.lang-divider {
+  color: var(--border-color);
+  font-size: 0.75rem;
+}

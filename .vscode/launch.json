@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Web App (Vite Dev Server)",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMaps": true,
+      "preLaunchTask": "Start Vite Dev Server"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Web App (Cloudflare Pages & Functions)",
+      "url": "http://localhost:8788",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMaps": true,
+      "preLaunchTask": "Start Cloudflare Pages Dev Server"
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Launch Web App in Edge (Vite Dev Server)",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMaps": true,
+      "preLaunchTask": "Start Vite Dev Server"
+    },
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMaps": true
+    }
+  ]
+}

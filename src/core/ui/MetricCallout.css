@@ -1,0 +1,48 @@
+.metric-callout {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--color-primary);
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-lg);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .metric-callout {
+    padding: 1rem 1.25rem;
+  }
+}
+
+.metric-callout__value {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 640px) {
+  .metric-callout__value {
+    font-size: 2rem;
+  }
+}
+
+.metric-callout__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 640px) {
+  .metric-callout__label {
+    font-size: 13px;
+  }
+}
