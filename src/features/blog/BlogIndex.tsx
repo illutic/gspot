@@ -70,7 +70,7 @@ export const BlogIndex: React.FC = () => {
         <section className="article-list-section">
           {filtered.length === 0 && (
             <p className="no-results font-label-mono">
-              No articles found for &quot;{searchQuery || activeTag}&quot;.
+              {copy.blog.noResultsFor.replace('{query}', searchQuery || activeTag)}
             </p>
           )}
           {filtered.map((art) => (

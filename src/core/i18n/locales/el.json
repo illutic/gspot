@@ -5,7 +5,8 @@
     "projects": "Έργα",
     "blog": "Άρθρα",
     "contact": "Επικοινωνία",
-    "resume": "Βιογραφικό"
+    "resume": "Βιογραφικό",
+    "toggleNavigation": "Εναλλαγή πλοήγησης"
   },
   "footer": {
     "copyright": "© 2026 George Sigalas | Senior Android Developer",
@@ -16,7 +17,11 @@
   "home": {
     "status": "Senior Android Developer · Portsmouth, UK",
     "viewProjects": "Προβολή Έργων",
-    "getInTouch": "Επικοινωνία"
+    "getInTouch": "Επικοινωνία",
+    "metricsYearsExp": "Χρόνια Εμπειρίας",
+    "metricsAppsShipped": "Εφαρμογές",
+    "metricsEducation": "Εκπαίδευση",
+    "appMockupAlt": "Mockup Android εφαρμογής"
   },
   "experience": {
     "title": "Επαγγελματική Πορεία",
@@ -26,7 +31,9 @@
   },
   "projects": {
     "title": "Έργα & Ανοικτός Κώδικας",
-    "subtitle": "Προσωπικά έργα και συνεισφορές ανοικτού κώδικα σε Android, KMP και web — με έμφαση στην καθαρή αρχιτεκτονική."
+    "subtitle": "Προσωπικά έργα και συνεισφορές ανοικτού κώδικα σε Android, KMP και web — με έμφαση στην καθαρή αρχιτεκτονική.",
+    "sourceCode": "Πηγαίος Κώδικας",
+    "liveDemo": "Ζωντανή Επίδειξη"
   },
   "blog": {
     "title": "Τεχνικά Άρθρα",
@@ -35,7 +42,11 @@
     "loadMore": "Φόρτωση Περισσότερων Άρθρων",
     "tocTitle": "Πίνακας Περιεχομένων",
     "readArticle": "Ανάγνωση Άρθρου",
-    "readTime": "λεπτά ανάγνωσης"
+    "readTime": "λεπτά ανάγνωσης",
+    "backToBlog": "← Πίσω στα Άρθρα",
+    "backToAllArticles": "← Πίσω σε όλα τα άρθρα",
+    "articleNotFound": "Το άρθρο δεν βρέθηκε.",
+    "noResultsFor": "Δεν βρέθηκαν άρθρα για \"{query}\"."
   },
   "contact": {
     "title": "Έναρξη Σύνδεσης",
@@ -46,7 +57,8 @@
     "emailPlaceholder": "george@example.com",
     "messageLabel": "payload_body",
     "messagePlaceholder": "Εισαγάγετε το μήνυμά σας εδώ...",
-    "submitBtn": "ΑΠΟΣΤΟΛΗ_ΜΗΝΥΜΑΤΟΣ",
-    "statusAvailable": "Ανοιχτός σε νέες ευκαιρίες"
+    "submitBtn": "ΑΠΟΣΤΟΛΗ_ΜΗΝΥΜΑΤΟΣ",    "executingBtn": "ΕΚΤΕΛΕΣΗ...",
+    "successMessage": "✓ Επιτυχής αποστολή! Το μήνυμα εστάλη.",
+    "errorMessage": "✕ Αποτυχία αποστολής. Ελέγξτε τα στοιχεία και δοκιμάστε ξανά.",    "statusAvailable": "Ανοιχτός σε νέες ευκαιρίες"
   }
 }

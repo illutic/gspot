@@ -25,9 +25,9 @@ export const Home: React.FC = () => {
 
         {/* Metric Callout Bar */}
         <div className="metrics-grid">
-          <MetricCallout value={hero.yearsExp} label="Years Exp" />
-          <MetricCallout value={hero.appsShipped} label="Apps Shipped" />
-          <MetricCallout value={hero.recognition} label="Education" />
+          <MetricCallout value={hero.yearsExp} label={copy.home.metricsYearsExp} />
+          <MetricCallout value={hero.appsShipped} label={copy.home.metricsAppsShipped} />
+          <MetricCallout value={hero.recognition} label={copy.home.metricsEducation} />
         </div>
 
         {/* Split Layout */}
@@ -60,7 +60,7 @@ export const Home: React.FC = () => {
               {HOME_DEVICE_IMAGE ? (
                 <img
                   src={HOME_DEVICE_IMAGE}
-                  alt="Android app mockup"
+                  alt={copy.home.appMockupAlt}
                   className="device-screenshot"
                 />
               ) : null}

@@ -323,7 +323,21 @@ export function getCopy(lang: Language): typeof copyEN {
 }
 ```
 
-### 6.2 Zero-Allocation Static Dataset Getters
+### 6.2 No Hardcoded User-Visible Strings
+
+Every string rendered in the UI — including button labels, link text, headings, status/error messages, empty-state copy, `aria-label` attributes, and `alt` text — MUST be defined as a key in the locale files (`src/core/i18n/locales/en.json`, `el.json`) and accessed via `useLanguage()`.
+
+**Rules:**
+1. **Never hardcode display strings in `.tsx` files.** Use `const { copy } = useLanguage()` and reference the appropriate key (e.g. `copy.blog.backToAllArticles`).
+2. **Add new keys to all locale files simultaneously.** The `copyEL: typeof copyEN` subtyping pattern enforces compile-time parity — a missing key is a TypeScript error.
+3. **Template strings with dynamic values** use a `{placeholder}` convention and are interpolated at the call site:
+   ```tsx
+   // en.json: "noResultsFor": "No articles found for \"{query}\"."
+   copy.blog.noResultsFor.replace('{query}', searchQuery)
+   ```
+4. **Decorative symbols** (e.g. `☰`, `✕`, `⏱`) that carry no translatable meaning may remain inline. Only copy that would change between languages belongs in locale files.
+
+### 6.3 Zero-Allocation Static Dataset Getters
 For static feature data (e.g. menu items, portfolio items, services), pre-compute localized arrays at module evaluation time so re-renders incur zero memory allocations:
 ```typescript
 const MENU_EN: MenuItem[] = [...];

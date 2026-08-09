@@ -5,7 +5,8 @@
     "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact",
-    "resume": "Resume"
+    "resume": "Resume",
+    "toggleNavigation": "Toggle navigation"
   },
   "footer": {
     "copyright": "© 2026 George Sigalas | Senior Android Developer",
@@ -16,7 +17,11 @@
   "home": {
     "status": "Senior Android Developer · Portsmouth, UK",
     "viewProjects": "View Projects",
-    "getInTouch": "Get in touch"
+    "getInTouch": "Get in touch",
+    "metricsYearsExp": "Years Exp",
+    "metricsAppsShipped": "Apps Shipped",
+    "metricsEducation": "Education",
+    "appMockupAlt": "Android app mockup"
   },
   "experience": {
     "title": "Career Trajectory",
@@ -26,7 +31,9 @@
   },
   "projects": {
     "title": "Projects & Open Source",
-    "subtitle": "Personal projects and open-source contributions spanning Android, KMP, and the web — built with clean architecture and modern tooling."
+    "subtitle": "Personal projects and open-source contributions spanning Android, KMP, and the web — built with clean architecture and modern tooling.",
+    "sourceCode": "Source Code",
+    "liveDemo": "Live Demo"
   },
   "blog": {
     "title": "Technical Dispatch",
@@ -35,7 +42,11 @@
     "loadMore": "Load More Articles",
     "tocTitle": "Table of Contents",
     "readArticle": "Read Article",
-    "readTime": "min read"
+    "readTime": "min read",
+    "backToBlog": "← Back to Blog",
+    "backToAllArticles": "← Back to all articles",
+    "articleNotFound": "Article not found.",
+    "noResultsFor": "No articles found for \"{query}\"."
   },
   "contact": {
     "title": "Initialize Connection",
@@ -47,6 +58,9 @@
     "messageLabel": "payload_body",
     "messagePlaceholder": "Enter your message here...",
     "submitBtn": "EXECUTE_SEND",
+    "executingBtn": "EXECUTING...",
+    "successMessage": "✓ Handshake successful! Message sent.",
+    "errorMessage": "✕ Execution failed. Please check parameters and retry.",
     "statusAvailable": "Open to new opportunities"
   }
 }

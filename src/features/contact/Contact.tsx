@@ -74,13 +74,13 @@ export const Contact: React.FC = () => {
 
             {status === 'success' ? (
               <div className="contact-alert success font-label-mono">
-                ✓ Handshake successful! Message sent.
+                {cCopy.successMessage}
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="developer-form">
                 {status === 'error' && (
                   <div className="contact-alert error font-label-mono">
-                    ✕ Execution failed. Please check parameters and retry.
+                    {cCopy.errorMessage}
                   </div>
                 )}
 
@@ -151,7 +151,7 @@ export const Contact: React.FC = () => {
                   disabled={status === 'loading'}
                   className="submit-btn font-label-mono"
                 >
-                  {status === 'loading' ? 'EXECUTING...' : cCopy.submitBtn}
+                  {status === 'loading' ? cCopy.executingBtn : cCopy.submitBtn}
                 </button>
               </form>
             )}

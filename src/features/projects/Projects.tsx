@@ -79,7 +79,7 @@ export const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         className="project-btn project-btn--ghost font-label-mono"
                       >
-                        Source Code
+                        {copy.projects.sourceCode}
                       </a>
                     )}
                     {item.demoUrl && (
@@ -89,7 +89,7 @@ export const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         className="project-btn project-btn--primary font-label-mono"
                       >
-                        Live Demo
+                        {copy.projects.liveDemo}
                       </a>
                     )}
                   </div>

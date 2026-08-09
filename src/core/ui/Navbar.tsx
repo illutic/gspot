@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
             type="button"
             className="hamburger-btn"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation"
+            aria-label={copy.nav.toggleNavigation}
             aria-expanded={menuOpen}
           >
             {menuOpen ? '✕' : '☰'}
