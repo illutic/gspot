@@ -34,6 +34,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     }
 
     // 3. Validation
+    if (!context.env.RESEND_API_KEY) {
+      throw new Error('Resend API key not configured.');
+    }
+
+    if (!context.env.NOTIFICATION_EMAIL) {
+      throw new Error('Notification email not configured.');
+    }
+
     if (!payload.name || payload.name.trim().length < 2 || payload.name.length > 100) {
       return new Response(JSON.stringify({ error: 'Invalid name provided.' }), { status: 400 });
     }
@@ -63,7 +71,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         },
         body: JSON.stringify({
           from: 'Contact Form <onboarding@resend.dev>',
-          to: context.env.NOTIFICATION_EMAIL || 'admin@example.com',
+          to: context.env.NOTIFICATION_EMAIL,
           reply_to: payload.email,
           subject: `New message from ${payload.name}`,
           text: `Name: ${payload.name}\nEmail: ${payload.email}\n\nMessage:\n${payload.message}`,
