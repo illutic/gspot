@@ -4,12 +4,19 @@ import { Badge, MetricCallout, CodeTerminal } from '@core/ui';
 import { useLanguage } from '@core/i18n';
 import { HOME_DEVICE_IMAGE } from '@core/config/siteConfig';
 import { parseHero } from './parseHero';
+import { parseCareer, calculateYearsOfExperience } from '@features/experience';
+import { parseProjects, calculateAppsShipped } from '@features/projects';
 import heroMarkdownEN from '../../content/home/hero.md?raw';
 import heroMarkdownEL from '../../content/home/hero.el.md?raw';
+import careerMarkdown from '../../content/experience/career.md?raw';
+import projectsMarkdown from '../../content/projects/projects.md?raw';
 import './Home.css';
 
 const heroEN = parseHero(heroMarkdownEN);
 const heroEL = parseHero(heroMarkdownEL);
+// Metrics are language-independent — derived from EN content at build time
+const yearsExp = calculateYearsOfExperience(parseCareer(careerMarkdown).items);
+const appsShipped = calculateAppsShipped(parseProjects(projectsMarkdown).items);
 
 export const Home: React.FC = () => {
   const { lang, copy } = useLanguage();
@@ -28,8 +35,8 @@ export const Home: React.FC = () => {
 
         {/* Metric Callout Bar */}
         <div className="metrics-grid">
-          <MetricCallout value={hero.yearsExp} label={copy.home.metricsYearsExp} />
-          <MetricCallout value={hero.appsShipped} label={copy.home.metricsAppsShipped} />
+          <MetricCallout value={yearsExp} label={copy.home.metricsYearsExp} />
+          <MetricCallout value={appsShipped} label={copy.home.metricsAppsShipped} />
           <MetricCallout value={hero.recognition} label={copy.home.metricsEducation} />
         </div>
 

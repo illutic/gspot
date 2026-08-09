@@ -106,3 +106,30 @@ export function parseCareer(rawMarkdown: string): CareerDocument {
   const items = blocks.map(parseBlock);
   return { meta: frontmatter, items };
 }
+
+const MONTH_INDEX: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+function parseMonthYear(str: string): Date | null {
+  const match = str.trim().match(/^([A-Za-z]{3})\s+(\d{4})$/);
+  if (!match) return null;
+  const month = MONTH_INDEX[match[1]];
+  const year = parseInt(match[2], 10);
+  if (month === undefined || isNaN(year)) return null;
+  return new Date(year, month, 1);
+}
+
+/** Derives total years of experience from the earliest job start date to today. */
+export function calculateYearsOfExperience(items: ExperienceItem[]): string {
+  const startDates = items
+    .map((item) => parseMonthYear(item.period.split('-')[0]))
+    .filter((d): d is Date => d !== null);
+
+  if (startDates.length === 0) return '0';
+
+  const earliest = new Date(Math.min(...startDates.map((d) => d.getTime())));
+  const years = (Date.now() - earliest.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
+  return `${Math.floor(years)}+`;
+}

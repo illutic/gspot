@@ -99,3 +99,10 @@ export function getProjectTags(items: ProjectItem[]): string[] {
   }
   return ['#All', ...Array.from(tags).sort()];
 }
+
+const MOBILE_CATEGORIES = new Set(['android', 'crossplatform']);
+
+/** Counts shipped mobile apps (Android + Crossplatform projects). */
+export function calculateAppsShipped(items: ProjectItem[]): string {
+  return String(items.filter((p) => MOBILE_CATEGORIES.has(p.category.toLowerCase())).length);
+}
