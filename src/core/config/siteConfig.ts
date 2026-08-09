@@ -28,6 +28,12 @@ export const SOCIAL = {
 
 export const RESUME_URL = '/resume.pdf';
 
+export const EDUCATION = {
+  degree: 'BSc Computer Science',
+  university: 'University of Portsmouth',
+  period: '2018 – 2022',
+} as const;
+
 /** Endpoint URL for contact form submissions (AWS Lambda Function URL or fallback API path) */
 export const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL || '/api/contact';
 

@@ -48,6 +48,11 @@
     "articleNotFound": "Article not found.",
     "noResultsFor": "No articles found for \"{query}\"."
   },
+  "resume": {
+    "printBtn": "Print CV",
+    "skillsTitle": "Skills",
+    "educationTitle": "Education"
+  },
   "contact": {
     "title": "Initialize Connection",
     "subtitle": "Execute a handshake. Fill out the parameters below to get in touch.",

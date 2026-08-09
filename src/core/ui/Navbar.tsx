@@ -45,14 +45,12 @@ export const Navbar: React.FC = () => {
         <div className="navbar-actions">
           <LanguageToggle />
           <ThemeToggle />
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/resume"
             className="navbar-resume-btn"
           >
             {copy.nav.resume}
-          </a>
+          </Link>
           <button
             type="button"
             className="hamburger-btn"

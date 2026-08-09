@@ -1,4 +1,4 @@
-﻿﻿---
+﻿---
 title: Έργα & Ανοικτός Κώδικας
 subtitle: Μια επιλογή προσωπικών έργων και συνεισφορών ανοικτού κώδικα σε Android, KMP, web και πέρα — με έμφαση στην καθαρή αρχιτεκτονική και σύγχρονα εργαλεία.
 ---
@@ -9,7 +9,7 @@ subtitle: Μια επιλογή προσωπικών έργων και συνε�
 **GithubUrl**: https://github.com/illutic/scribblefit
 **DemoUrl**: https://illutic.github.io/scribblefit/
 
-Εφαρμογή παρακολούθησης γυμναστικής cross-platform με AI που επιτρέπει καταγραφή προπόνησης σε ελεύθερο κείμενο — χωρίς φόρμες ή μενού. Ένας LLM (Gemini) αναλύει το ελεύθερο κείμενο σε δομημένες ασκήσεις, σειρές και επαναλήψεις. Αναπτύχθηκε native για Android (Jetpack Compose) και iOS (SwiftUI) με κοινό KMP core, αρχιτεκτονική MVI, offline-first αποθήκευση και Firebase backend.
+Εφαρμογή παρακολούθησης γυμναστικής cross-platform με AI που επιτρέπει καταγραφή προπόνησης σε ελεύθερο κείμενο — χωρίς φόρμες ή μενού. Ένας LLM (Gemini) αναλύει το ελεύθερο κείμενο σε δομημένες ασκήσεις, σειρές και επαναλήψεις. Αναπτύχθηκε native για Android (Jetpack Compose) και iOS (SwiftUI) με αρχιτεκτονική MVI, offline-first αποθήκευση και Firebase backend.
 
 ---
 

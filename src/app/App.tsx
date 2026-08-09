@@ -6,6 +6,7 @@ import { Experience } from '@features/experience';
 import { Projects } from '@features/projects';
 import { BlogIndex, BlogArticle } from '@features/blog';
 import { Contact } from '@features/contact';
+import { Resume } from '@features/resume';
 import { ROUTES } from './routes';
 import './App.css';
 
@@ -34,6 +35,7 @@ export function AppContent() {
           <Route path={ROUTES.blog} element={<BlogIndex />} />
           <Route path={ROUTES.blogArticle} element={<BlogArticle />} />
           <Route path={ROUTES.contact} element={<Contact />} />
+          <Route path={ROUTES.resume} element={<Resume />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
