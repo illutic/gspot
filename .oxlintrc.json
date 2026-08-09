@@ -11,5 +11,5 @@
     "react/no-direct-mutation-state": "error",
     "typescript/no-explicit-any": "off"
   },
-  "ignorePatterns": ["dist", "node_modules", ".agents"]
+  "ignorePatterns": ["dist", "dist-lambda", "node_modules", ".agents"]
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CodeTerminal } from '@core/ui';
 import { useLanguage } from '@core/i18n';
+import { CONTACT_API_URL } from '@core/config/siteConfig';
 import './Contact.css';
 
 export const Contact: React.FC = () => {
@@ -16,7 +17,7 @@ export const Contact: React.FC = () => {
     setStatus('loading');
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(CONTACT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

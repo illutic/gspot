@@ -28,6 +28,9 @@ export const SOCIAL = {
 
 export const RESUME_URL = '/resume.pdf';
 
+/** Endpoint URL for contact form submissions (AWS Lambda Function URL or fallback API path) */
+export const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL || '/api/contact';
+
 // ─── Home / Hero ──────────────────────────────────────────────────────────────
 
 /** Shown when the hero.md frontmatter is missing values */
