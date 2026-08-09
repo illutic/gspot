@@ -57,8 +57,10 @@
     "emailPlaceholder": "george@example.com",
     "messageLabel": "payload_body",
     "messagePlaceholder": "Εισαγάγετε το μήνυμά σας εδώ...",
-    "submitBtn": "ΑΠΟΣΤΟΛΗ_ΜΗΝΥΜΑΤΟΣ",    "executingBtn": "ΕΚΤΕΛΕΣΗ...",
+    "submitBtn": "ΑΠΟΣΤΟΛΗ_ΜΗΝΥΜΑΤΟΣ",
+    "executingBtn": "ΕΚΤΕΛΕΣΗ...",
     "successMessage": "✓ Επιτυχής αποστολή! Το μήνυμα εστάλη.",
-    "errorMessage": "✕ Αποτυχία αποστολής. Ελέγξτε τα στοιχεία και δοκιμάστε ξανά.",    "statusAvailable": "Ανοιχτός σε νέες ευκαιρίες"
+    "errorMessage": "✕ Αποτυχία αποστολής. Ελέγξτε τα στοιχεία και δοκιμάστε ξανά.",
+    "statusAvailable": "Ανοιχτός σε νέες ευκαιρίες"
   }
 }
