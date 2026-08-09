@@ -93,19 +93,19 @@ export const EXPERIENCE_METRIC_PATTERNS: Array<{
   pattern: RegExp;
   label: string;
 }> = [
-  {
-    pattern: /up to a (?<value>\d+%) network performance improvement/i,
-    label: 'Network Improvement',
-  },
-  {
-    pattern: /reduced .* by (?<value>\d+%)/i,
-    label: 'Build Time Reduction',
-  },
-  {
-    pattern: /(?<value>\d+%) .*(build time|build)/i,
-    label: 'Build Time Reduction',
-  },
-];
+    {
+      pattern: /up to a (?<value>\d+%) network performance improvement/i,
+      label: 'Network Improvement',
+    },
+    {
+      pattern: /reduced .* by (?<value>\d+%)/i,
+      label: 'Build Time Reduction',
+    },
+    {
+      pattern: /(?<value>\d+%) .*(build time|build)/i,
+      label: 'Build Time Reduction',
+    },
+  ];
 
 /**
  * Badge variants: tags whose text includes any of these strings

@@ -1,306 +1,333 @@
 /* ── Page shell ── */
 .resume-page {
-  min-height: 100vh;
-  background: var(--bg-primary);
-  padding: 2rem 1.5rem 4rem;
+    min-height: 100vh;
+    background: var(--bg-primary);
+    padding: 2rem 1.5rem 4rem;
 }
 
 .resume-controls {
-  display: flex;
-  justify-content: flex-end;
-  max-width: 860px;
-  margin: 0 auto 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 860px;
+    margin: 0 auto 1.5rem;
 }
 
 .resume-print-btn {
-  background: var(--color-primary);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: var(--radius-md);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-  transition: background var(--transition-fast);
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background var(--transition-fast);
 }
 
 .resume-print-btn:hover {
-  background: var(--color-primary-hover);
+    background: var(--color-primary-hover);
 }
 
-/* ── Document card ── */
+/* ── Document card — always light so it prints correctly on paper ── */
 .resume-document {
-  max-width: 860px;
-  margin: 0 auto;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 3rem 3.5rem;
-  box-shadow: var(--shadow-md);
+    --bg-primary: #FAFAFA;
+    --bg-surface: #FFFFFF;
+    --text-main: #09090B;
+    --text-muted: #52525B;
+    --text-subtle: #71717A;
+    --color-primary: #059669;
+    --color-primary-hover: #10B981;
+    --border-color: #E4E4E7;
+
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 3rem 3.5rem;
+    box-shadow: var(--shadow-md);
 }
 
 /* ── Header ── */
 .resume-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--color-primary);
-  margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: 2rem;
 }
 
 .resume-name {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin: 0 0 0.25rem;
-  line-height: 1.1;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 0.25rem;
+    line-height: 1.1;
 }
 
 .resume-title {
-  font-size: 1rem;
-  color: var(--color-primary);
-  margin: 0;
-  font-weight: 500;
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin: 0;
+    font-weight: 500;
 }
 
 .resume-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.2rem;
-  font-style: normal;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 .resume-contact a {
-  color: var(--color-primary);
-  text-decoration: none;
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
 .resume-contact a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* ── Section ── */
 .resume-section {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .resume-section-title {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.4rem;
-  margin: 0 0 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.4rem;
+    margin: 0 0 1rem;
 }
 
 /* ── Skills ── */
 .resume-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .resume-skill {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: 0.2rem 0.6rem;
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
 }
 
 /* ── Job ── */
 .resume-job {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .resume-job-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
 }
 
 .resume-job-role {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
 }
 
 .resume-job-period {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  white-space: nowrap;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
 }
 
 .resume-job-meta {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin: 0.15rem 0 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0.15rem 0 0.5rem;
 }
 
 .resume-job-highlights {
-  margin: 0 0 0.4rem 1.1rem;
-  padding: 0;
-  font-size: 0.85rem;
-  color: var(--text-main);
-  line-height: 1.6;
+    margin: 0 0 0.4rem 1.1rem;
+    padding: 0;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
 .resume-job-highlights li {
-  margin-bottom: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 /* ── Project ── */
 .resume-project {
-  margin-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .resume-project-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .resume-project-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
 }
 
 .resume-project-url {
-  font-size: 0.72rem;
-  color: var(--color-primary);
-  text-decoration: none;
+    font-size: 0.72rem;
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
 .resume-project-url:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .resume-project-desc {
-  font-size: 0.85rem;
-  color: var(--text-main);
-  margin: 0.25rem 0 0.3rem;
-  line-height: 1.55;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin: 0.25rem 0 0.3rem;
+    line-height: 1.55;
 }
 
 /* ── Tags (shared) ── */
 .resume-tags {
-  font-size: 0.72rem;
-  color: var(--text-subtle);
-  margin: 0.2rem 0 0;
+    font-size: 0.72rem;
+    color: var(--text-subtle);
+    margin: 0.2rem 0 0;
 }
 
 /* ── Education ── */
 .resume-education {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 }
 
 .resume-education-degree {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
 }
 
 .resume-education-meta {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+    font-size: 0.78rem;
+    color: var(--text-muted);
 }
 
 /* ── Print styles ── */
+@page {
+    size: A4;
+    margin: 1.5cm 1.8cm;
+}
+
 @media print {
-  /* Hide everything outside the document */
-  .navbar-header,
-  .footer,
-  .resume-controls {
-    display: none !important;
-  }
 
-  body {
-    background: white !important;
-  }
+    /* Hide everything outside the document */
+    .navbar-header,
+    .site-footer,
+    .resume-controls {
+        display: none !important;
+    }
 
-  .resume-page {
-    padding: 0;
-    background: white;
-  }
+    body {
+        background: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
 
-  .resume-document {
-    max-width: 100%;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 1.5cm 1.8cm;
-    background: white;
-    color: black;
-  }
+    .resume-page {
+        padding: 0;
+        background: white;
+    }
 
-  .resume-name,
-  .resume-job-role,
-  .resume-project-title,
-  .resume-education-degree {
-    color: black !important;
-  }
+    .resume-document {
+        max-width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        /* @page handles margins; no extra padding needed */
+        padding: 0;
+        background: white;
+        color: black;
+    }
 
-  .resume-title,
-  .resume-contact a,
-  .resume-project-url {
-    color: #0055aa !important;
-  }
+    /* Tighten section spacing so content flows naturally across pages */
+    .resume-section {
+        margin-bottom: 1rem;
+        /* Do NOT set page-break-inside: avoid here — sections are too tall */
+    }
 
-  .resume-section-title,
-  .resume-job-meta,
-  .resume-job-period,
-  .resume-tags,
-  .resume-education-meta,
-  .resume-contact {
-    color: #444 !important;
-  }
+    .resume-name,
+    .resume-job-role,
+    .resume-project-title,
+    .resume-education-degree {
+        color: black !important;
+    }
 
-  .resume-skill {
-    border-color: #ccc;
-    background: white;
-    color: #333;
-  }
+    .resume-title,
+    .resume-contact a,
+    .resume-project-url {
+        color: #0055aa !important;
+    }
 
-  .resume-job {
-    page-break-inside: avoid;
-  }
+    .resume-section-title,
+    .resume-job-meta,
+    .resume-job-period,
+    .resume-tags,
+    .resume-education-meta,
+    .resume-contact {
+        color: #444 !important;
+    }
 
-  .resume-section {
-    page-break-inside: avoid;
-  }
+    .resume-skill {
+        border-color: #ccc;
+        background: white;
+        color: #333;
+    }
+
+    /* Only avoid page breaks inside individual jobs/projects, not whole sections */
+    .resume-job,
+    .resume-project {
+        page-break-inside: avoid;
+    }
+
+    /* Keep the section heading with the first item below it */
+    .resume-section-title {
+        page-break-after: avoid;
+    }
 }
 
 /* ── Responsive ── */
 @media (max-width: 640px) {
-  .resume-document {
-    padding: 1.5rem;
-  }
+    .resume-document {
+        padding: 1.5rem;
+    }
 
-  .resume-header {
-    flex-direction: column;
-    gap: 1rem;
-  }
+    .resume-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-  .resume-contact {
-    align-items: flex-start;
-  }
+    .resume-contact {
+        align-items: flex-start;
+    }
 
-  .resume-job-header {
-    flex-direction: column;
-    gap: 0.1rem;
-  }
+    .resume-job-header {
+        flex-direction: column;
+        gap: 0.1rem;
+    }
 }
