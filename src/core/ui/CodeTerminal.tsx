@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { tokenizeKotlin } from '@core/utils';
 import './CodeTerminal.css';
 
 export interface CodeTerminalProps {
@@ -7,8 +8,21 @@ export interface CodeTerminalProps {
   className?: string;
 }
 
+function HighlightedKotlin({ code }: { code: string }) {
+  return (
+    <>
+      {tokenizeKotlin(code).map((token, i) => (
+        token.type === 'plain'
+          ? token.text
+          : <span key={i} className={`kt-${token.type}`}>{token.text}</span>
+      ))}
+    </>
+  );
+}
+
 export function CodeTerminal({ filename = 'Terminal', code, className = '' }: CodeTerminalProps) {
   const [copied, setCopied] = useState(false);
+  const isKotlin = filename.endsWith('.kt');
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
@@ -31,7 +45,7 @@ export function CodeTerminal({ filename = 'Terminal', code, className = '' }: Co
       </div>
       <div className="code-terminal__body">
         <pre>
-          <code>{code}</code>
+          <code>{isKotlin ? <HighlightedKotlin code={code} /> : code}</code>
         </pre>
       </div>
     </div>

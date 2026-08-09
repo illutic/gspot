@@ -32,9 +32,17 @@
   display: inline-block;
 }
 
-.dot-red { background-color: #ff5f56; }
-.dot-yellow { background-color: #ffbd2e; }
-.dot-green { background-color: #27c93f; }
+.dot-red {
+  background-color: #ff5f56;
+}
+
+.dot-yellow {
+  background-color: #ffbd2e;
+}
+
+.dot-green {
+  background-color: #27c93f;
+}
 
 .code-terminal__filename {
   font-family: var(--font-mono);
@@ -73,7 +81,7 @@
   font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1.5;
-  color: var(--text-main);
+  color: #FFFFFF;
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
@@ -92,4 +100,30 @@
   max-width: 100%;
   min-width: 0;
   white-space: pre;
+}
+
+/* ── Kotlin syntax highlighting (JetBrains Darcula palette) ── */
+.kt-keyword {
+  color: #CC7832;
+}
+
+.kt-annotation {
+  color: #BBB529;
+}
+
+.kt-string {
+  color: #6A8759;
+}
+
+.kt-comment {
+  color: #808080;
+  font-style: italic;
+}
+
+.kt-type {
+  color: #FFC66D;
+}
+
+.kt-number {
+  color: #6897BB;
 }

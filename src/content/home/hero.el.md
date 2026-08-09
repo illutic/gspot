@@ -5,16 +5,21 @@ yearsExp: 5+
 appsShipped: 4
 recognition: BSc Πληροφορική
 badges: [Kotlin, Jetpack Compose, Coroutines, Hilt, MVI]
-snippetTitle: AiChatbot.kt
+snippetTitle: ChatViewModel.kt
 snippetCode: |
-  @Composable
-  fun ChatScreen(
-    viewModel: ChatViewModel = hiltViewModel()
-  ) {
-    val state by viewModel
-      .uiState
-      .collectAsStateWithLifecycle()
-    // Βελτίωση δικτύου 60% ✓
+  @HiltViewModel
+  class ChatViewModel @Inject constructor(
+    private val llm: LlmRepository
+  ) : ViewModel() {
+
+    val messages = llm
+      .streamResponse()
+      .map { it.toUiMessage() }
+      .stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5_000),
+        emptyList()
+      )
   }
 ---
 

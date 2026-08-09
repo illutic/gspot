@@ -24,13 +24,43 @@ export function parseFrontmatter<T = Record<string, any>>(rawMarkdown: string): 
   const content = match[2].trim();
   const frontmatter: Record<string, any> = {};
 
-  yamlBlock.split('\n').forEach((line) => {
+  const lines = yamlBlock.split('\n');
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
     const colonIndex = line.indexOf(':');
     if (colonIndex !== -1) {
       const key = line.slice(0, colonIndex).trim();
-      let value = line.slice(colonIndex + 1).trim();
+      const raw = line.slice(colonIndex + 1).trim();
 
-      // Handle quotes or arrays
+      // YAML block scalar — collect indented lines as a single string
+      if (raw === '|' || raw === '|-') {
+        i++;
+        // Detect indent from the first non-empty line
+        let blockIndent = -1;
+        const blockLines: string[] = [];
+        while (i < lines.length) {
+          const next = lines[i];
+          if (next.trim() === '') {
+            blockLines.push('');
+            i++;
+            continue;
+          }
+          const lineIndent = next.match(/^( *)/)?.[1].length ?? 0;
+          if (blockIndent === -1) blockIndent = lineIndent;
+          if (lineIndent < blockIndent) break;
+          blockLines.push(next.slice(blockIndent));
+          i++;
+        }
+        // Strip trailing blank lines for |-
+        const joined = raw === '|-'
+          ? blockLines.join('\n').trimEnd()
+          : blockLines.join('\n');
+        frontmatter[key] = joined;
+        continue;
+      }
+
+      let value = raw;
       if ((value.startsWith("'") && value.endsWith("'")) || (value.startsWith('"') && value.endsWith('"'))) {
         value = value.slice(1, -1);
       } else if (value.startsWith('[') && value.endsWith(']')) {
@@ -39,11 +69,13 @@ export function parseFrontmatter<T = Record<string, any>>(rawMarkdown: string): 
           .split(',')
           .map((item) => item.trim().replace(/^['"]|['"]$/g, ''));
         frontmatter[key] = arrayItems;
-        return;
+        i++;
+        continue;
       }
       frontmatter[key] = value;
     }
-  });
+    i++;
+  }
 
   return {
     frontmatter: frontmatter as T,
