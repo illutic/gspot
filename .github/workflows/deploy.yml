@@ -20,6 +20,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,8 +36,8 @@ jobs:
         run: npm ci
 
       - name: Build
-        # github.repository is "owner/repo"; strip the owner prefix to get
-        # just the repo name for the Vite base path (e.g. /quantum-cv/).
+        env:
+          VITE_CONTACT_API_URL: ${{ vars.VITE_CONTACT_API_URL }}
         run: |
           REPO_NAME="${GITHUB_REPOSITORY##*/}"
           VITE_BASE_URL="/${REPO_NAME}/" npm run build
