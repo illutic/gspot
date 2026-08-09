@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@core/ui';
 import { useLanguage } from '@core/i18n';
 import { filterArticles } from './parseBlog';
-import { featuredPost, listPosts, availableTags } from './blogRegistry';
+import { getFeaturedPost, getListPosts, availableTags } from './blogRegistry';
 import './BlogIndex.css';
 
 export const BlogIndex: React.FC = () => {
-  const { copy } = useLanguage();
+  const { lang, copy } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTag, setActiveTag] = useState('#All');
 
+  const featuredPost = getFeaturedPost(lang);
+  const listPosts = getListPosts(lang);
   const filtered = filterArticles(listPosts, searchQuery, activeTag);
 
   return (

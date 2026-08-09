@@ -4,13 +4,16 @@ import { Badge, MetricCallout, CodeTerminal } from '@core/ui';
 import { useLanguage } from '@core/i18n';
 import { HOME_DEVICE_IMAGE } from '@core/config/siteConfig';
 import { parseHero } from './parseHero';
-import heroMarkdown from '../../content/home/hero.md?raw';
+import heroMarkdownEN from '../../content/home/hero.md?raw';
+import heroMarkdownEL from '../../content/home/hero.el.md?raw';
 import './Home.css';
 
-const hero = parseHero(heroMarkdown);
+const heroEN = parseHero(heroMarkdownEN);
+const heroEL = parseHero(heroMarkdownEL);
 
 export const Home: React.FC = () => {
-  const { copy } = useLanguage();
+  const { lang, copy } = useLanguage();
+  const hero = lang === 'el' ? heroEL : heroEN;
 
   return (
     <div className="home-page">

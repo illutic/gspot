@@ -3,15 +3,19 @@ import { Badge } from '@core/ui';
 import { useLanguage } from '@core/i18n';
 import { PROJECT_PRIMARY_TAG_KEYWORDS } from '@core/config/siteConfig';
 import { parseProjects, filterProjects, getProjectTags } from './parseProjects';
-import projectsMarkdown from '../../content/projects/projects.md?raw';
+import projectsMarkdownEN from '../../content/projects/projects.md?raw';
+import projectsMarkdownEL from '../../content/projects/projects.el.md?raw';
 import './Projects.css';
 
-const { meta, items: allProjects } = parseProjects(projectsMarkdown);
-const availableTags = getProjectTags(allProjects);
+const projectsEN = parseProjects(projectsMarkdownEN);
+const projectsEL = parseProjects(projectsMarkdownEL);
+// Tags are technical terms shared across languages
+const availableTags = getProjectTags(projectsEN.items);
 
 export const Projects: React.FC = () => {
-  const { copy } = useLanguage();
+  const { lang, copy } = useLanguage();
   const [activeTag, setActiveTag] = useState<string>('#All');
+  const { meta, items: allProjects } = lang === 'el' ? projectsEL : projectsEN;
 
   const displayed = filterProjects(allProjects, activeTag);
 

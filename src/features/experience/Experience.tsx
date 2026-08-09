@@ -4,14 +4,17 @@ import { useLanguage } from '@core/i18n';
 import { renderInlineMarkdown } from '@core/utils';
 import { EXPERIENCE_PRIMARY_TAG_KEYWORDS } from '@core/config/siteConfig';
 import { parseCareer } from './parseCareer';
-import careerMarkdown from '../../content/experience/career.md?raw';
+import careerMarkdownEN from '../../content/experience/career.md?raw';
+import careerMarkdownEL from '../../content/experience/career.el.md?raw';
 import './Experience.css';
 
-const { meta, items: allExperiences } = parseCareer(careerMarkdown);
+const careerEN = parseCareer(careerMarkdownEN);
+const careerEL = parseCareer(careerMarkdownEL);
 
 export const Experience: React.FC = () => {
-  const { copy } = useLanguage();
+  const { lang, copy } = useLanguage();
   const [filterMode, setFilterMode] = useState<'full' | 'highlights'>('full');
+  const { meta, items: allExperiences } = lang === 'el' ? careerEL : careerEN;
 
   const displayed =
     filterMode === 'highlights' ? allExperiences.filter((e) => e.isHighlight) : allExperiences;

@@ -5,14 +5,15 @@ import { parseMarkdownToReact } from '@core/utils';
 import { OWNER } from '@core/config/siteConfig';
 import { useLanguage } from '@core/i18n';
 import { parseArticleContent } from './parseBlog';
-import { POST_MAP } from './blogRegistry';
+import { getPostMap } from './blogRegistry';
 import './BlogArticle.css';
 
 export const BlogArticle: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { copy } = useLanguage();
-  const firstSlug = Object.keys(POST_MAP)[0] ?? '';
-  const raw = POST_MAP[slug ?? firstSlug] ?? POST_MAP[firstSlug] ?? '';
+  const { lang, copy } = useLanguage();
+  const postMap = getPostMap(lang);
+  const firstSlug = Object.keys(postMap)[0] ?? '';
+  const raw = postMap[slug ?? firstSlug] ?? postMap[firstSlug] ?? '';
 
   if (!raw) {
     return (
