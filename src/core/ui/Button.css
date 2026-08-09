@@ -42,7 +42,6 @@
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-secondary-hover);
   transform: translateY(-1px);
 }
 
