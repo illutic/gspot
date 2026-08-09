@@ -7,7 +7,7 @@
     "dev": "vite",
     "prebuild": "npm run clean-agents",
     "clean-agents": "node -e \"const fs = require('fs'), path = require('path'); function clean(dir) { if (!fs.existsSync(dir)) return; fs.readdirSync(dir, { withFileTypes: true }).forEach(e => { const p = path.join(dir, e.name); if (e.isDirectory()) clean(p); else if (e.isFile() && !e.name.endsWith('.md')) { fs.unlinkSync(p); } }); } clean('.agents');\"",
-    "build": "vite build",
+    "build": "vite build && node -e \"const fs = require('fs'); if (fs.existsSync('dist/index.html')) fs.copyFileSync('dist/index.html', 'dist/404.html');\"",
     "preview": "vite preview",
     "pages:dev": "npm run build && wrangler pages dev dist",
     "lint": "oxlint",

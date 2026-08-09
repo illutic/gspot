@@ -44,7 +44,7 @@ export function AppContent() {
 
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <AppContent />
     </BrowserRouter>
