@@ -30,17 +30,25 @@ export const BlogArticle: React.FC = () => {
   return (
     <div className="blog-article-page">
       <main className="container article-layout">
-        {/* Sticky Table of Contents Sidebar */}
+        {/* Sticky Back Link + Table of Contents Sidebar */}
         <aside className="article-toc-sidebar">
-          <div className="toc-card">
-            <h4 className="toc-title font-label-mono">Table of Contents</h4>
-            <ul className="toc-list">
-              {headings.map(({ text, anchor }) => (
-                <li key={anchor}>
-                  <a href={`#${anchor}`} className="toc-link">{text}</a>
-                </li>
-              ))}
-            </ul>
+          <div className="article-sidebar-stack">
+            <div className="back-card">
+              <Link to="/blog" className="font-label-mono back-link">
+                ← Back to Technical Dispatch
+              </Link>
+            </div>
+
+            <div className="toc-card">
+              <h4 className="toc-title font-label-mono">Table of Contents</h4>
+              <ul className="toc-list">
+                {headings.map(({ text, anchor }) => (
+                  <li key={anchor}>
+                    <a href={`#${anchor}`} className="toc-link">{text}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </aside>
 
@@ -63,12 +71,6 @@ export const BlogArticle: React.FC = () => {
           </header>
 
           <div className="article-body">{parseMarkdownToReact(body)}</div>
-
-          <div className="back-bar">
-            <Link to="/blog" className="font-label-mono back-link">
-              ← Back to Technical Dispatch
-            </Link>
-          </div>
         </article>
       </main>
     </div>
