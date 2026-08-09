@@ -16,7 +16,7 @@ export interface ProjectItem {
   demoUrl?: string;
   metrics?: string;
   description: string;
-  image: string;
+  image?: string;
 }
 
 export interface ProjectsDocument {
@@ -24,7 +24,7 @@ export interface ProjectsDocument {
   items: ProjectItem[];
 }
 
-const META_PREFIXES = ['### ', '**Category**:', '**GithubUrl**:', '**DemoUrl**:', '**Stars**:', '**Metrics**:', '**Tags**:'];
+const META_PREFIXES = ['### ', '**Category**:', '**GithubUrl**:', '**DemoUrl**:', '**Stars**:', '**Metrics**:', '**Tags**:', '**Image**:'];
 
 function parseTags(block: string): string[] {
   const tagsMatch = block.match(/\*\*Tags\*\*:\s*\[(.*?)\]/);
@@ -45,6 +45,8 @@ function parseBlock(block: string, idx: number): ProjectItem {
     lines.find((l) => l.startsWith('**DemoUrl**:'))?.replace('**DemoUrl**:', '').trim();
   const metrics =
     lines.find((l) => l.startsWith('**Metrics**:'))?.replace('**Metrics**:', '').trim();
+  const rawImage =
+    lines.find((l) => l.startsWith('**Image**:'))?.replace('**Image**:', '').trim();
 
   const tags = parseTags(block);
 
@@ -52,6 +54,8 @@ function parseBlock(block: string, idx: number): ProjectItem {
     .filter((l) => !META_PREFIXES.some((prefix) => l.startsWith(prefix)))
     .join(' ')
     .trim();
+
+  const image = rawImage || (PROJECT_DEFAULT_IMAGES.length > 0 ? (PROJECT_DEFAULT_IMAGES[idx % PROJECT_DEFAULT_IMAGES.length] as string) : undefined);
 
   return {
     title,
@@ -61,7 +65,7 @@ function parseBlock(block: string, idx: number): ProjectItem {
     demoUrl,
     metrics,
     description,
-    image: PROJECT_DEFAULT_IMAGES[idx % PROJECT_DEFAULT_IMAGES.length] as string,
+    image,
   };
 }
 

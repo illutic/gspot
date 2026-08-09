@@ -57,11 +57,13 @@ export const Home: React.FC = () => {
           <div className="device-mockup-wrapper glow-active">
             <div className="device-notch" />
             <div className="device-screen flex flex-col justify-end p-4">
-              <img
-                src={HOME_DEVICE_IMAGE}
-                alt="Android app mockup"
-                className="device-screenshot"
-              />
+              {HOME_DEVICE_IMAGE ? (
+                <img
+                  src={HOME_DEVICE_IMAGE}
+                  alt="Android app mockup"
+                  className="device-screenshot"
+                />
+              ) : null}
               <div className="device-code-overlay">
                 <CodeTerminal filename={hero.snippetTitle} code={hero.snippetCode} />
               </div>

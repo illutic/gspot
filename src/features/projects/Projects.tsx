@@ -41,10 +41,12 @@ export const Projects: React.FC = () => {
         <div className="projects-grid">
           {displayed.map((item, idx) => (
             <article key={idx} className="project-card rounded-xl glow-active">
-              <div className="project-card__media">
-                <img src={item.image} alt={item.title} className="project-card__image" />
-                <div className="project-card__overlay" />
-              </div>
+              {item.image && (
+                <div className="project-card__media">
+                  <img src={item.image} alt={item.title} className="project-card__image" />
+                  <div className="project-card__overlay" />
+                </div>
+              )}
 
               <div className="project-card__content">
                 <div className="project-card__header">

@@ -7,7 +7,6 @@ readTime: 12 min read
 tag: Architecture
 author: Alex Mercer
 featured: true
-image: https://lh3.googleusercontent.com/aida-public/AB6AXuD0vl6oKoyaxEXoL9U2ICPpAzY1WEw9HJCamKwFb0eN9f3QzWGEkbV2zP0q6oVXsJVvSZ4QTDs64FKqAAZ_lKbdSu6j3_JCu7zWFooE2PFQscO5jfkxDOdzCljiAQA6muur5kLD30R5bbK4z8uzX9P4I0DPp-RjnfFk8sElIwXttF-G6DU6mRTfombHv_Fv4sJ8WtKQq7JrYgvUxB_oiXqahVaQvXpq4i8kzw8Foa_wBBHa17szgCM3
 ---
 
 ## Introduction
